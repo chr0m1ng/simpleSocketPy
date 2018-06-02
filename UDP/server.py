@@ -10,8 +10,9 @@ try:
     udpServer.bind(SERVER)
 except socket.error as err_msg:
     print 'Unable to instantiate socket. Error code: %d, Error message: %s' % (err_msg[0], err_msg[1])
+    sys.exit(1)
 
-print "Server Status => RUNING & LISTENING | on => %s | Port => %d" % (SERVER[0], SERVER[1])
+print 'Server Status => RUNING & LISTENING | on => %s | Port => %d' % (SERVER[0], SERVER[1])
 
 while True:
     message, client = udpServer.recvfrom(1024)
@@ -21,4 +22,7 @@ while True:
     else:
         serverFunctions.decideAndExecFunc(message, client, udpServer)
 
+
+print 'Shutting Server Down...'
 udpServer.close()
+print '...Server is Down!'

@@ -4,7 +4,7 @@ SERVER = ('127.0.0.1', 5000)
 
 CONNECTED = False
 
-print "Connecting to server..."
+print 'Connecting to server...'
 
 udpClient = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
@@ -16,7 +16,7 @@ while not CONNECTED:
         if (message == 'PONG'):
             CONNECTED = True
 
-print "...Connection Established"
+print '...Connection Established'
 
 
 udpClient.sendto('[:printOptions]', SERVER)
