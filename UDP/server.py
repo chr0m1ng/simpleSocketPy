@@ -1,7 +1,7 @@
 import socket
 from serverUtils import Utils
 
-SERVER = ('127.0.0.1', 5000)
+SERVER = ('172.20.10.4', 80)
 
 serverFunctions = Utils()
 
